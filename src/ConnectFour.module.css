@@ -1,0 +1,133 @@
+@keyframes dropDisc {
+  0% { top: -70px; }
+  100% { top: var(--final-top) !important; }
+}
+
+/* Connect Four Board Styles */
+.connectFourContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: #f5f5dc;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.connectFourTitle {
+  font-size: 2.5rem;
+  margin: 32px 0 16px 0;
+  color: #7b5a2b;
+  letter-spacing: 2px;
+  text-shadow: 1px 2px 0 #e3c888;
+}
+
+.boardStand {
+  position: relative;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.boardLegsLeft {
+  position: absolute;
+  bottom: -40px;
+  width: 40px;
+  height: 100px;
+  background: #7b5a2b;
+  border-radius: 12px;
+  z-index: 1;
+  left: -44px;
+}
+.boardLegsRight {
+  position: absolute;
+  bottom: -40px;
+  width: 40px;
+  height: 100px;
+  background: #7b5a2b;
+  border-radius: 12px;
+  z-index: 1;
+  right: -44px;
+}
+
+.connectFourBoard {
+  display: grid;
+  grid-template-columns: repeat(7, 64px);
+  grid-template-rows: repeat(6, 64px);
+  background: #e3c888;
+  border: 8px solid #7b5a2b;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px #7b5a2b55;
+  position: relative;
+  z-index: 2;
+}
+
+.connectFourCell {
+  width: 60px;
+  height: 60px;
+  margin: 2px;
+  border-radius: 50%;
+  background: #fff8e1;
+  box-shadow: 0 2px 6px #7b5a2b22 inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.connectFourCell:hover {
+  background: #f7e6b2;
+}
+
+.connectFourDisc {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 4px 12px #0002;
+  animation: dropDisc 0.42s cubic-bezier(.68,-0.55,.27,1.55);
+  z-index: 3;
+}
+
+.blue {
+  background: #1e3a8a;
+  border: 3px solid #233b6e;
+}
+.red {
+  background: #b91c1c;
+  border: 3px solid #7a1010;
+}
+
+.connectFourInfo {
+  margin: 18px 0 8px 0;
+  font-size: 1.3rem;
+  color: #7b5a2b;
+  min-height: 32px;
+}
+
+.connectFourBtn {
+  margin-top: 18px;
+  padding: 10px 28px;
+  font-size: 1.1rem;
+  background: #e3c888;
+  border: 2px solid #7b5a2b;
+  border-radius: 8px;
+  color: #7b5a2b;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.connectFourBtn:hover {
+  background: #7b5a2b;
+  color: #fff8e1;
+}
+
+.connectFourWinner {
+  font-size: 2rem;
+  color: #b91c1c;
+  margin-top: 18px;
+  font-weight: bold;
+  text-shadow: 1px 2px 0 #fff8e1;
+} 
